@@ -1,1 +1,157 @@
- 
+/* Import Google font */
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+/*Create Root Css Varible  */
+:root {
+  --yellow: #fed330;
+  --red: #e74c3c;
+  --white: #fff;
+  --black: #222;
+  --light-color: #777;
+  --border: 0.2rem solid var(var(--black));
+}
+
+/* Full Page CSS */
+* {
+  font-family: "Rubik", "sans-serif";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  border: none;
+}
+
+/* All Mouse selections */
+*::selection {
+  background-color: var(--yellow);
+  color: var(--white);
+}
+
+/* ================Srcollbar css ====================*/
+::-webkit-scrollbar {
+  height: 0.5rem;
+  width: 1rem;
+}
+
+/* Srcollbar-track(path) */
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+/* Scorllbar thumbnail */
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  stop-opacity: 7rem;
+}
+
+/* Section CSS */
+section {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+/* Header css */
+
+.header {
+  position: sticky;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 1000;
+  background-color: var(--white);
+  border-bottom: 2px solid var(--black);
+}
+
+.header .flex {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .flex .logo{
+    font-size: 2.2rem;
+    color: var(--black);
+}
+/* Navigation Bar if i hover the mouse */
+.header .flex .navbar a{
+    font-size: 2rem;
+    color: var(--black);
+    margin: 0 1rem;
+}
+/* Navigation Bar if i hover the mouse */
+.header .flex .navbar a:hover{
+    color:var(--yellow);
+    text-decoration:underline;
+}
+
+
+.header .flex .icon>*{
+    margin-left: 2rem;
+    font-size: 2.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .flex .icon>*:hover{
+    color: var(--yellow);
+}
+.header .flex .icon span>*{
+    font-size: 1rem;
+}
+
+
+
+#menu-btn{
+    display: none;
+}
+
+
+@media (max-width:550px) {
+    html{
+        font-size: 40px;
+    }
+    #menu-btn{
+        display: inline-block;
+    }
+    .header .flex .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        border-top: var(--border);
+        border-bottom: 2px solid #222;
+        transition: .2s linear;
+        clip-path: polygon(0 0,100% 0,0 0);
+    }.header .flex .navbar a{
+         display: block;
+         margin: 1rem;
+         
+    }
+    .header .flex .logo{
+        font-size: 1.9rem;
+    }
+    .header .flex .navbar.active{
+        clip-path: polygon(0 0,100% 100%,0 100%);
+
+    }
+   
+    
+}
+
+
+
+
+/* Media query for responsive */
+@media (max-width:779px){
+    html{
+        font-size:40%;
+    }
+    
+}
+
